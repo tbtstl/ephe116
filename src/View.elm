@@ -1,8 +1,11 @@
 module View exposing (page, view)
 
 import Browser exposing (Document)
+import Header
+import Home
 import Html exposing (Html, div, text)
-import Models exposing (Model, Route(..))
+import Html.Attributes exposing (class)
+import Models exposing (Model, Page, Route(..))
 import Msgs exposing (Msg)
 import NotFound
 
@@ -10,15 +13,27 @@ import NotFound
 view : Model -> Document msg
 view model =
     { title = "EPHE 116 Lesson Plan"
-    , body = [ div [] (page model) ]
+    , body = container (page model)
     }
 
 
-page : Model -> List (Html msg)
+container : List (Html msg) -> List (Html msg)
+container current_page =
+    [ div [ class "container" ]
+        [ div [ class "page-container" ] current_page
+        , div [ class "example-container" ] [ text "hi" ]
+        ]
+    ]
+
+
+page : Page msg
 page model =
     case model.route of
         NotFoundRoute ->
             NotFound.page model
 
+        HomeRoute ->
+            Home.page model
+
         _ ->
-            [ div [] [ text "Hello" ] ]
+            [ Header.header { name = "idk", href = "/idk" } ]

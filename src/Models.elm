@@ -1,6 +1,8 @@
-module Models exposing (Model, Route(..))
+module Models exposing (HeaderLink, Model, Page, Route(..))
 
 import Browser.Navigation as Nav
+import Html
+import Msgs exposing (Msg)
 import Url
 
 
@@ -18,3 +20,11 @@ type Route
     | DrillRoute String
     | GameRoute
     | NotFoundRoute
+
+
+type alias Page msg =
+    Model -> List (Html.Html msg)
+
+
+type alias HeaderLink =
+    { name : String, href : String }
