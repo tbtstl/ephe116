@@ -8,6 +8,7 @@ import Html.Attributes exposing (class)
 import Models exposing (Model, Page, Route(..))
 import Msgs exposing (Msg)
 import NotFound
+import Warmups
 
 
 view : Model -> Document msg
@@ -34,6 +35,9 @@ page model =
 
         HomeRoute ->
             Home.page model
+
+        WarmupRoute ->
+            Warmups.page model
 
         _ ->
             [ Header.header { name = "idk", href = "/idk" } ]

@@ -9,4 +9,4 @@ import Msgs exposing (Msg)
 
 page : Model -> List (Html msg)
 page model =
-    [ div [ class "w-100" ] [ Header.header { name = "Warmups", href = "warmups" }, text "Not Found" ] ]
+    [ div [ class "w-100" ] [ Header.header { name = "Warmups", href = "/warmups" }, text "Not Found" ] ]
