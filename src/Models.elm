@@ -31,4 +31,4 @@ type alias HeaderLink =
 
 
 type alias Drill =
-    { name : String, time : String, next : HeaderLink, details : List String }
+    { source : String, name : String, time : String, next : HeaderLink, details : List String }
