@@ -1,4 +1,4 @@
-module Models exposing (HeaderLink, Model, Page, Route(..))
+module Models exposing (Drill, HeaderLink, Model, Page, Route(..))
 
 import Browser.Navigation as Nav
 import Html
@@ -28,3 +28,7 @@ type alias Page msg =
 
 type alias HeaderLink =
     { name : String, href : String }
+
+
+type alias Drill =
+    { name : String, time : String, next : HeaderLink, details : List String }

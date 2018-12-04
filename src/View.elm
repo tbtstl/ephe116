@@ -1,6 +1,8 @@
 module View exposing (page, view)
 
 import Browser exposing (Document)
+import Drills exposing (drillRecord, drillTemplate)
+import Game
 import Header
 import Home
 import Html exposing (Html, div, text)
@@ -38,6 +40,12 @@ page model =
 
         WarmupRoute ->
             Warmups.page model
+
+        DrillRoute drill ->
+            drillTemplate (drillRecord drill) model
+
+        GameRoute ->
+            Game.page model
 
         _ ->
             [ Header.header { name = "idk", href = "/idk" } ]
