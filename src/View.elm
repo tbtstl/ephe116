@@ -24,7 +24,6 @@ container : List (Html msg) -> List (Html msg)
 container current_page =
     [ div [ class "container" ]
         [ div [ class "page-container" ] current_page
-        , div [ class "example-container" ] [ text "hi" ]
         ]
     ]
 

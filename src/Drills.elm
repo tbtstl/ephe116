@@ -46,5 +46,5 @@ drillTemplate : Drill -> Page msg
 drillTemplate drill model =
     [ Header.header { name = drill.next.name, href = drill.next.href }
     , div [ class "w-100" ] [ h3 [] [ text drill.name ], p [] [ text ("Estimated Time: " ++ drill.time) ] ]
-    , div [] (List.map details drill.details)
+    , div [ class "instructions" ] (List.map details drill.details)
     ]

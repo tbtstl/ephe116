@@ -8,7 +8,7 @@ import Models exposing (Page)
 page : Page msg
 page model =
     [ div [] [ h1 [] [ text "EPHE 116 Badminton Assignment" ] ]
-    , div [] [ text "This is a badminton lesson plan designed for intermediate badminton players of any age who wish to practice clearing. The total time frame for this lesson is 120 minutes." ]
+    , div [] [ text "This is a badminton lesson plan designed for intermediate badminton players of any age who wish to practice clearing. The total time frame for this lesson is 100 minutes." ]
     , div [ classList [ ( "mt3", True ) ] ]
         [ text "For your convenience, this assignment is broken down into the following parts:"
         , ol []
